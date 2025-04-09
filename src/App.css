@@ -1,0 +1,112 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.field-palette {
+  width: 250px;
+  padding: 15px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.field-container {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.palette-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.palette-field {
+  padding: 10px;
+  border: 1px dashed #ccc;
+  background: #f9f9f9;
+  cursor: grab;
+}
+
+.field {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+}
+
+.field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.field-actions button {
+  margin-left: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.field-edit-form {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.field-edit-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.field-edit-form input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.option-row {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.option-row input {
+  flex: 1;
+}
+
+.option-row button {
+  margin-left: 5px;
+}
+
+.form-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.droppable-area {
+  min-height: 200px;
+}
+
+.draggable-field {
+  margin-bottom: 10px;
+}
+
+/* Drag and drop styling */
+.draggable-field.dragging {
+  opacity: 0.5;
+  background: #e6f7ff;
+}
