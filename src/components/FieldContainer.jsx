@@ -17,21 +17,31 @@ function FieldContainer({ fields, onDrop, onDragOver, updateField, removeField, 
             <h3>Form Builder</h3>
 
             <DragDropContext onDragEnd={handleDragEnd}>
-                <Droppable droppableId="fields">
-                    {(provided) => (
+                <Droppable
+                    droppableId="fields"
+                    isDropDisabled={false}
+                    isCombineEnabled={true}
+                    ignoreContainerClipping={false}
+                >
+                    {(provided, snapshot) => (
                         <div
                             {...provided.droppableProps}
                             ref={provided.innerRef}
-                            className="droppable-area"
+                            className={`droppable-area ${snapshot.isDraggingOver ? 'dragging-over' : ''}`}
                         >
                             {fields.map((field, index) => (
-                                <Draggable key={field.id} draggableId={field.id} index={index}>
-                                    {(provided) => (
+                                <Draggable
+                                    key={field.id}
+                                    draggableId={field.id}
+                                    index={index}
+                                >
+                                    {(provided, snapshot) => (
                                         <div
                                             ref={provided.innerRef}
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
-                                            className="draggable-field"
+                                            className={`draggable-field ${snapshot.isDragging ? 'dragging' : ''}`}
+                                            style={provided.draggableProps.style}
                                         >
                                             <Field
                                                 field={field}

@@ -5,7 +5,7 @@ import useLocalStorage from './hooks/useLocalStorage';
 import './App.css';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('tab1');
+  const [activeTab] = useState('tab1');
   const [tabs, setTabs] = useLocalStorage('formBuilderTabs', {
     tab1: [],
   });
@@ -75,7 +75,7 @@ function App() {
           onDragOver={(e) => e.preventDefault()}
           updateField={updateField}
           removeField={removeField}
-          reorderFields={reorderFields}
+          reorderFields={reorderFields}          
         />
       </div>
     </div>
